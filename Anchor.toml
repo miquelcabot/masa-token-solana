@@ -7,7 +7,7 @@ seeds = false
 skip-lint = false
 
 [programs.localnet]
-masa_token_solana = "5Yr3fF55yWB4gQmNTBJt6AAMG2ASRqof6sZqqVR3x9Hz"
+masa_token = "5Yr3fF55yWB4gQmNTBJt6AAMG2ASRqof6sZqqVR3x9Hz"
 
 [registry]
 url = "https://api.apr.dev"

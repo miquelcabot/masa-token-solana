@@ -5,7 +5,7 @@ import { assert } from 'chai'
 
 import { OftTools } from '@layerzerolabs/lz-solana-sdk-v2'
 
-import oftIdl from '../target/idl/oft.json'
+import oftIdl from '../target/idl/masa_token.json'
 import endpointIdl from '../target/idl/endpoint.json'
 
 const OFT_SEED = 'Oft'
