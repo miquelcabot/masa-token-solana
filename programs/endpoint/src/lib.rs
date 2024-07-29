@@ -5,7 +5,7 @@ use anchor_lang::prelude::*;
 use instructions::*;
 use state::*;
 
-declare_id!("Dygv9zggbGaBBAyszM6aBzpU9KdzRszCSd96zxgY64QF");
+declare_id!("Dz3w8ACAL52nmQz19p8a6bdoKSJ6aEf275h7jmJ249VT");
 
 pub const OAPP_SEED: &[u8] = b"OApp";
 
