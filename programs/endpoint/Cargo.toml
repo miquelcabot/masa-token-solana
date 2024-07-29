@@ -1,5 +1,5 @@
 [package]
-name = "endpoint-mock"
+name = "endpoint"
 version = "0.1.0"
 description = "Endpoint Mock"
 edition = "2021"

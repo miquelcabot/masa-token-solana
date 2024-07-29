@@ -26,7 +26,7 @@ pub const ENFORCED_OPTIONS_SEED: &[u8] = b"EnforcedOptions";
 pub const LZ_RECEIVE_TYPES_SEED: &[u8] = oapp::LZ_RECEIVE_TYPES_SEED;
 
 #[program]
-pub mod oft {
+pub mod masa_token {
     use super::*;
 
     pub fn version(_ctx: Context<GetVersion>) -> Result<Version> {

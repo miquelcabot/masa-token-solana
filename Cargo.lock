@@ -892,6 +892,15 @@ checksum = "3dca9240753cf90908d7e4aac30f630662b02aebaa1b58a3cadabdb23385b58b"
 [[package]]
 name = "endpoint"
 version = "0.1.0"
+dependencies = [
+ "anchor-lang",
+ "cpi-helper",
+ "solana-program",
+]
+
+[[package]]
+name = "endpoint"
+version = "0.1.0"
 source = "git+https://github.com/LayerZero-Labs/LayerZero-v2.git?branch=main#0e3186dae2ab157d4b84c6c03571bae6986075d0"
 dependencies = [
  "anchor-lang",
@@ -900,15 +909,6 @@ dependencies = [
  "solana-helper",
  "solana-program",
  "utils",
-]
-
-[[package]]
-name = "endpoint-mock"
-version = "0.1.0"
-dependencies = [
- "anchor-lang",
- "cpi-helper",
- "solana-program",
 ]
 
 [[package]]
@@ -1220,7 +1220,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "90ed8c1e510134f979dbc4f070f87d4313098b704861a105fe34231c70a3901c"
 
 [[package]]
-name = "masa-token"
+name = "masa_token"
 version = "0.1.0"
 dependencies = [
  "anchor-lang",
@@ -1372,7 +1372,7 @@ version = "0.1.0"
 source = "git+https://github.com/LayerZero-Labs/LayerZero-v2.git?branch=main#0e3186dae2ab157d4b84c6c03571bae6986075d0"
 dependencies = [
  "anchor-lang",
- "endpoint",
+ "endpoint 0.1.0 (git+https://github.com/LayerZero-Labs/LayerZero-v2.git?branch=main)",
 ]
 
 [[package]]
