@@ -2,7 +2,7 @@ import * as anchor from "@coral-xyz/anchor";
 import { Program } from "@coral-xyz/anchor";
 import { MasaTokenSolana } from "../target/types/masa_token_solana";
 
-describe("masa-token-solana", () => {
+describe("masa-token", () => {
   // Configure the client to use the local cluster.
   anchor.setProvider(anchor.AnchorProvider.env());
 
