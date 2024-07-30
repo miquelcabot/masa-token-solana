@@ -16,7 +16,7 @@ use oapp::{
 };
 use state::*;
 
-declare_id!("5Yr3fF55yWB4gQmNTBJt6AAMG2ASRqof6sZqqVR3x9Hz");
+declare_id!("CRn3VKsM9XuLzt5VRfak1Qj1ddx7dYnEfa4gTP8k2aTe");
 
 pub const OFT_VERSION: u64 = 1;
 pub const OFT_SDK_VERSION: u64 = 1;
@@ -26,7 +26,7 @@ pub const ENFORCED_OPTIONS_SEED: &[u8] = b"EnforcedOptions";
 pub const LZ_RECEIVE_TYPES_SEED: &[u8] = oapp::LZ_RECEIVE_TYPES_SEED;
 
 #[program]
-pub mod masa_token {
+pub mod masatoken {
     use super::*;
 
     pub fn version(_ctx: Context<GetVersion>) -> Result<Version> {

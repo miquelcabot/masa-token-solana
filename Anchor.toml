@@ -7,14 +7,14 @@ seeds = false
 skip-lint = false
 
 [programs.localnet]
-masa_token = "5Yr3fF55yWB4gQmNTBJt6AAMG2ASRqof6sZqqVR3x9Hz"
+masatoken = "CRn3VKsM9XuLzt5VRfak1Qj1ddx7dYnEfa4gTP8k2aTe"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
 cluster = "Localnet"
-wallet = "~/.config/solana/id.json"
+wallet = "/Users/miquel/.config/solana/id.json"
 
 [scripts]
 test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
