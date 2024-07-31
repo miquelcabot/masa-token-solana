@@ -32,7 +32,8 @@ jobs:
           echo "$HOME/.local/share/solana/install/active_release/bin" >> $GITHUB_PATH
           solana --version
       - name: Install dependencies
-        run: |
-          npm i -g @project-serum/anchor-cli@0.29.0
-          npm install
-          
+        run: yarn
+      - name: Build with Anchor
+        run: yarn build
+      - name: Test with Anchor
+        run: yarn test
