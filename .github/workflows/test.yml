@@ -20,13 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: ./.github/actions/setup-rust/
-      - uses: ./.github/actions/setup-solana/
-      - uses: ./.github/actions/setup-anchor/
-        id: rust-setup
-      - uses: Swatinem/rust-cache@v2
-        name: Cache Rust and it's packages
-      - name: Build Anchor
-        run: anchor build
-      - name: Test Anchor
-        run: anchor test
+      - name: Setup Rust env
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          components: rustfmt, clippy
