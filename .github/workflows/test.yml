@@ -33,6 +33,12 @@ jobs:
           solana --version
       - name: Install dependencies
         run: yarn
+      - name: Install Anchor
+        run: |
+          cargo install --git https://github.com/coral-xyz/anchor avm --locked --force
+          sudo apt-get update && sudo apt-get upgrade && sudo apt-get install -y pkg-config build-essential libudev-dev libssl-dev
+          avm install latest
+          avm use latest
       - name: Build with Anchor
         run: yarn build
       - name: Test with Anchor
