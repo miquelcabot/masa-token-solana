@@ -26,3 +26,7 @@ jobs:
           toolchain: stable
       - name: Install Solana CLI
         run: sh -c "$(curl -sSfL https://release.solana.com/v1.17.31/install)"
+      - name: Install Anchor
+        run: cargo install --git https://github.com/coral-xyz/anchor avm --locked --force
+             avm install 0.29.0
+             avm use 0.29.0
