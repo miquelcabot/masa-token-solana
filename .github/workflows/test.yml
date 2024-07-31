@@ -10,30 +10,23 @@ on:
     branches:
       - '**'
 
+env:
+  SOLANA_CLI_VERSION: 1.17.31
+  ANCHOR_VERSION: 0.29.0
+
 jobs:
   anchor-test:
 
     runs-on: ubuntu-latest
-    container: projectserum/build:v0.24.2
-
     steps:
       - uses: actions/checkout@v3
-      - name: List rustup toolchains
-        run: rustup toolchain list
-      - name: Set default toolchain
-        run: rustup default stable
-      - name: List rustup toolchains
-        run: rustup toolchain list
-      - name: Generate new keygen
-        run: solana-keygen new
-      - name: Set solana target cluster to local
-        run: solana config set --url http:localhost:8899
-      - name: Check solana config
-        run: solana config get
-      - name: Install yarn dependencies
-        run: yarn install
-      - name: Build
+      - uses: ./.github/actions/setup-rust/
+      - uses: ./.github/actions/setup-solana/
+      - uses: ./.github/actions/setup-anchor/
+        id: rust-setup
+      - uses: Swatinem/rust-cache@v2
+        name: Cache Rust and it's packages
+      - name: Build Anchor
         run: anchor build
-      - name: Run tests
+      - name: Test Anchor
         run: anchor test
-
