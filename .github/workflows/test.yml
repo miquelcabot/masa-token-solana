@@ -24,4 +24,5 @@ jobs:
         uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
-          components: rustfmt, clippy
+      - name: Install Solana CLI
+        run: sh -c "$(curl -sSfL https://release.solana.com/v1.17.31/install)"
