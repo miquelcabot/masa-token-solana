@@ -7,7 +7,7 @@ seeds = false
 skip-lint = false
 
 [programs.localnet]
-masa_token = "CunM6dC44e5n4w6MRaXffYixb7ZYjmPM93CapyUGDp9N"
+masatoken = "CRn3VKsM9XuLzt5VRfak1Qj1ddx7dYnEfa4gTP8k2aTe"
 
 [registry]
 url = "https://api.apr.dev"

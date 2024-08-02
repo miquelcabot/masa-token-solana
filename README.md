@@ -20,7 +20,7 @@ create programId keypair files if not existed
 
 ```
 solana-keygen new -o target/deploy/endpoint-keypair.json
-solana-keygen new -o target/deploy/masa_token-keypair.json
+solana-keygen new -o target/deploy/masatoken-keypair.json
 
 anchor keys sync
 ```
@@ -37,7 +37,7 @@ yarn && yarn build && yarn test
 
    ```bash
    anchor build -v
-   solana program deploy --program-id target/deploy/masa_token-keypair.json target/verifiable/masa_token.so -u mainnet-beta
+   solana program deploy --program-id target/deploy/masatoken-keypair.json target/verifiable/masatoken.so -u mainnet-beta
    ```
 
    or
@@ -45,7 +45,7 @@ yarn && yarn build && yarn test
 2. with solana-verify
    ```bash
    solana-verify build
-   solana program deploy --program-id target/deploy/masa_token-keypair.json target/deploy/masa_token.so -u mainnet-beta
+   solana program deploy --program-id target/deploy/masatoken-keypair.json target/deploy/masatoken.so -u mainnet-beta
    ```
 
 please visit [Solana Verify CLI](https://github.com/Ellipsis-Labs/solana-verifiable-build) and [Deploy a Solana Program with the CLI](https://docs.solanalabs.com/cli/examples/deploy-a-program) for more detail.

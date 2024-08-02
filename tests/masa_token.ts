@@ -5,14 +5,14 @@ import { assert } from 'chai'
 
 import { OftTools } from '@layerzerolabs/lz-solana-sdk-v2'
 
-import oftIdl from '../target/idl/masa_token.json'
+import oftIdl from '../target/idl/masatoken.json'
 import endpointIdl from '../target/idl/endpoint.json'
 
 const OFT_SEED = 'Oft'
 const SOLANA_OFT_TOKEN_DECIMALS = 8
 const OFT_SHARE_DECIMALS = 6
 
-describe('masa_token', () => {
+describe('masatoken', () => {
     // Configure the client to use the local cluster.
     const provider = anchor.AnchorProvider.local(undefined, {
         commitment: 'confirmed',
