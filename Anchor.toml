@@ -7,7 +7,7 @@ seeds = false
 skip-lint = false
 
 [programs.localnet]
-masatoken = "CRn3VKsM9XuLzt5VRfak1Qj1ddx7dYnEfa4gTP8k2aTe"
+masatoken = "APABsj9BCCRh8YyhN7LDVswCJounW7B2Zmvor8G8nUsy"
 
 [registry]
 url = "https://api.apr.dev"
