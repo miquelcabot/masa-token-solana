@@ -10,36 +10,13 @@ on:
     branches:
       - '**'
 
-env:
-  SOLANA_CLI_VERSION: 1.17.31
-  ANCHOR_VERSION: 0.29.0
-
 jobs:
   anchor-test:
 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Setup Rust env
-        uses: actions-rs/toolchain@v1
+      - uses: metadaoproject/anchor-test@v2
         with:
-          toolchain: stable
-      - name: Install Solana CLI
-        run: sh -c "$(curl -sSfL https://release.solana.com/v1.17.31/install)"
-      - name: Reload PATH
-        run: |
-          source ~/.profile && source ~/.bash_profile
-          echo "$HOME/.local/share/solana/install/active_release/bin" >> $GITHUB_PATH
-          solana --version
-      - name: Install dependencies
-        run: yarn
-      - name: Install Anchor
-        run: |
-          cargo install --git https://github.com/coral-xyz/anchor avm --locked --force
-          sudo apt-get update && sudo apt-get upgrade && sudo apt-get install -y pkg-config build-essential libudev-dev libssl-dev
-          avm install latest
-          avm use latest
-      - name: Build with Anchor
-        run: yarn build
-      - name: Test with Anchor
-        run: yarn test
+          anchor-version: '0.29.0'
+          solana-cli-version: '1.17.31'
