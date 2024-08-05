@@ -54,11 +54,10 @@ describe('masatoken', () => {
             ENDPOINT_PROGRAM_ID
         )
 
-        /* await provider.sendAndConfirm(new anchor.web3.Transaction().add(initOftIx), [wallet.payer])
+        await provider.sendAndConfirm(new anchor.web3.Transaction().add(initOftIx), [wallet.payer])
 
         // check status
         const delegate = await OftTools.getDelegate(provider.connection, oftConfigPda, ENDPOINT_PROGRAM_ID)
         assert.equal(delegate.toBase58(), wallet.publicKey.toBase58())
-        */
     })
 })
