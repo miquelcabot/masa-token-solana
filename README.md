@@ -50,6 +50,25 @@ yarn && yarn build && yarn test
 
 please visit [Solana Verify CLI](https://github.com/Ellipsis-Labs/solana-verifiable-build) and [Deploy a Solana Program with the CLI](https://docs.solanalabs.com/cli/examples/deploy-a-program) for more detail.
 
+## Generation of a new release
+
+From a clean `main` branch you can run the release task bumping the version accordingly based on semantic versioning:
+
+```bash
+yarn release
+```
+
+The task does the following:
+
+* Bumps the project version in `package.json`
+* Creates a Git tag
+* Commits and pushes everything
+* Creates a GitHub release with commit messages as description
+* Git tag push will trigger a GitHub Action workflow to do a `npm` release
+
+For the GitHub releases steps a GitHub personal access token, exported as `GITHUB_TOKEN` is required. You can add this
+environment variable to the `.env` file. [Setup](https://github.com/release-it/release-it#github-releases)
+
 #### Notice
 
 If you encounter issues during compilation and testing, it might be due to the versions of Solana and Anchor. You can switch to Solana version `1.17.31` and Anchor version `0.29.0`, as these are the versions we have tested and verified to be working.
