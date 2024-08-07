@@ -1,0 +1,15 @@
+.github/
+.anchor/
+app/
+migrations/
+node_modules/
+programs/
+target/
+!target/types/**.ts
+tests/
+.env.*
+.gitignore
+.npmignore
+Anchor.toml
+Cargo.lock
+Cargo.toml
