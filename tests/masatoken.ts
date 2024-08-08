@@ -1,5 +1,11 @@
 import * as anchor from '@coral-xyz/anchor'
-import { TOKEN_PROGRAM_ID, createInitializeMintInstruction, getMintLen } from '@solana/spl-token'
+import {
+  TOKEN_PROGRAM_ID,
+  createInitializeMintInstruction,
+  getMintLen,
+  getOrCreateAssociatedTokenAccount,
+  getAccount
+} from '@solana/spl-token'
 import { Keypair, PublicKey, SystemProgram } from '@solana/web3.js'
 import { assert } from 'chai'
 
@@ -59,5 +65,35 @@ describe('masatoken', () => {
         // check status
         const delegate = await OftTools.getDelegate(provider.connection, oftConfigPda, ENDPOINT_PROGRAM_ID)
         assert.equal(delegate.toBase58(), wallet.publicKey.toBase58())
+
+        // step 3, mint tokens (initial supply)
+        const amount = BigInt(100)
+        const associatedTokenAccount = (
+            await getOrCreateAssociatedTokenAccount(
+                provider.connection,
+                wallet.payer,
+                mintKp.publicKey,
+                wallet.publicKey,
+                false
+            )
+        ).address
+
+        const oftMintIx = await OftTools.createMintToIx(
+            wallet.publicKey,
+            mintKp.publicKey,
+            associatedTokenAccount, // which account to mint to ?
+            amount,
+            TOKEN_PROGRAM_ID,
+            OFT_PROGRAM_ID
+        )
+        const mintSignature = await provider.sendAndConfirm(new anchor.web3.Transaction().add(oftMintIx), [
+            wallet.payer,
+        ])
+        console.log(mintSignature) // tx id
+
+        // Fetch and print the token balance
+        const tokenAccountInfo = await getAccount(provider.connection, associatedTokenAccount)
+        console.log('Token Balance:', tokenAccountInfo.amount.toString())
+        assert.equal(tokenAccountInfo.amount, amount)
     })
 })
