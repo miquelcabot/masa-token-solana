@@ -7,14 +7,15 @@ seeds = false
 skip-lint = false
 
 [programs.localnet]
-masatoken = "APABsj9BCCRh8YyhN7LDVswCJounW7B2Zmvor8G8nUsy"
-endpoint = "9oBoEESWN2To61k2uNrdcGqEtM2JA2two1d8i9wi4v2X"
+masatoken = "CABzVvZauydPSWXFX7DSXP47hnE42Zk4MghiVihXpuqv"
+endpoint = "3R3Wxaz11b5UwU7fe6itxgTZTb3FFB9eCdUA1e3cCDq2"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
 cluster = "Localnet"
+# cluster = "https://api.devnet.solana.com"
 wallet = "~/.config/solana/id.json"
 
 [scripts]
